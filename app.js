@@ -1,13 +1,21 @@
 let size = 16;
-let paintMode = false;
+let paintMode = true;
 let currentColor = 'black';
 
 const sketchBoxContainer = document.getElementById('sketch-box');
-sketchBoxContainer.style.cssText = `display: grid; grid-template-columns: repeat(16, 1fr); grid-template-rows: repeat(16, 1fr);`;
+sketchBoxContainer.style.cssText = 'display: grid; grid-template-columns:'
++ 'repeat(16, 1fr); grid-template-rows: repeat(16, 1fr);';
 
 for (let i = 1; i <= size * size; i++) {
   const gridDiv = document.createElement('div');
   sketchBoxContainer.appendChild(gridDiv);
+}
+
+function setupBoard() {
+  for (let i = 1; i <= size * size; i++) {
+    const gridDiv = document.createElement('div');
+    sketchBoxContainer.appendChild(gridDiv);
+  }
 }
 
 function changeGridElementColor(div) {
@@ -42,3 +50,18 @@ window.addEventListener('keydown', (e) => {
   if (e.code === 'KeyP') setPaintButtonState(true);
   if (e.code === 'KeyE') setPaintButtonState(false);
 });
+
+const colorPicker = document.getElementById('color-picker');
+colorPicker.addEventListener('input', () => {
+  currentColor = colorPicker.value;
+});
+
+function clearBoard() {
+  sketchBoxContainer.innerHTML = '';
+  setupBoard();
+}
+
+const resetButton = document.getElementById('reset-btn');
+resetButton.addEventListener('click', () => clearBoard());
+
+window.addEventListener("load", () => setupBoard());
