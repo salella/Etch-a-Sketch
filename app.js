@@ -7,3 +7,12 @@ for (let i = 1; i < size * size; i++) {
   const gridDiv = document.createElement('div');
   sketchBoxContainer.appendChild(gridDiv);
 }
+
+function changeGridElementColor(div) {
+  div.style.backgroundColor = 'black';
+}
+
+const gridElements = document.querySelectorAll('#sketch-box div');
+gridElements.forEach(div => {
+  div.addEventListener('mouseover', () => changeGridElementColor(div));
+});
