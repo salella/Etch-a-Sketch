@@ -16,7 +16,6 @@ function setupBoard() {
 + `repeat(${gridSize}, 1fr); grid-template-rows: repeat(${gridSize}, 1fr);`;
   for (let i = 1; i <= gridSize * gridSize; i++) {
     const gridDiv = document.createElement('div');
-    gridDiv.classList.add('migh');
     sketchBoxContainer.appendChild(gridDiv);
   }
 
