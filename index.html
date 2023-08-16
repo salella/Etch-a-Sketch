@@ -13,23 +13,34 @@
 </head>
 <body>
   <div class="container">
-    <div class="tools">
-      <h3>Tools</h3>
-      <div class="buttons">
-        <div id="paint-btn" class="btn">Erase Mode(E)</div>
-      </div>
-      <div class="pick-color btn">
-        <span>Cange Color</span>
-        <input id="color-picker" type="color">
-      </div>
-      <div id="rainbow-btn" class="btn">Rainbow Mode</div>
-      <div class="set-size-section">
-        <p id="size-input-text">16 x 16</p>
-        <input id="size-input" type="range" min="2" max="100" value="16">
-      </div>
-      <div id="reset-btn" class="btn">Reset Page</div>
+    <div class="header">
+      <h1>Etch a Sketch!</h1>
     </div>
-    <div id="sketch-box"></div>
+    <div class="main">
+      <div class="tools">
+        <h3>Tools</h3>
+        <div class="buttons">
+          <div id="paint-btn" class="btn">Erase Mode(E)</div>
+        </div>
+        <div class="pick-color btn">
+          <span>Cange Color</span>
+          <input id="color-picker" type="color">
+        </div>
+        <div id="rainbow-btn" class="btn">Rainbow Mode</div>
+        <div class="set-size-section">
+          <p id="size-input-text">16 x 16</p>
+          <input id="size-input" type="range" min="2" max="100" value="16">
+        </div>
+        <div id="reset-btn" class="btn">Reset Page</div>
+      </div>
+      <div id="sketch-box"></div>
+    </div>
+    <div class="footer">
+      <a href="https://github.com/salella" target="_blank">
+        <span>Created by Sallela</span>
+        <img src="githublogo.png" width="25px" height="25px" alt="Github Icon">
+      </a>
+    </div>
   </div>
 </body>
 </html>
