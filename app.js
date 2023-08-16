@@ -31,7 +31,7 @@ gridElements.forEach(div => {
 function setPaintButtonState(state) {
   if (state) {
     paintModeButton.classList.add('paint');
-    paintModeButton.innerHTML = 'Pain Mode(P)';
+    paintModeButton.innerHTML = 'Paint Mode(P)';
     paintMode = true;
   } else {
     paintModeButton.classList.remove('paint');
