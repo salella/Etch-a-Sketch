@@ -86,6 +86,20 @@ body {
   cursor: pointer;
 }
 
+.migh {
+  border: 1px solid gray;
+}
+
+.set-size-section {
+  margin-top: 1.2rem;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+#size-input {
+  margin-top: 6px;
+}
+
 .on {
   background-color: var(--third-color) !important;
 }

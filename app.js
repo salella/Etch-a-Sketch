@@ -4,8 +4,6 @@ let currentColor = 'black';
 let rainbowMode = false;
 
 const sketchBoxContainer = document.getElementById('sketch-box');
-sketchBoxContainer.style.cssText = 'display: grid; grid-template-columns:'
-+ 'repeat(16, 1fr); grid-template-rows: repeat(16, 1fr);';
 
 // for (let i = 1; i <= gridSize * gridSize; i++) {
 //   const gridDiv = document.createElement('div');
@@ -14,8 +12,11 @@ sketchBoxContainer.style.cssText = 'display: grid; grid-template-columns:'
 //https://www.google.com/search?client=firefox-b-e&q=firefox+filter+output
 
 function setupBoard() {
+  sketchBoxContainer.style.cssText = `display: grid; grid-template-columns:`
++ `repeat(${gridSize}, 1fr); grid-template-rows: repeat(${gridSize}, 1fr);`;
   for (let i = 1; i <= gridSize * gridSize; i++) {
     const gridDiv = document.createElement('div');
+    gridDiv.classList.add('migh');
     sketchBoxContainer.appendChild(gridDiv);
   }
 
@@ -89,6 +90,14 @@ function getRandomColor() {
 
   return `rgb(${randomR}, ${randomG}, ${randomB})`;
 }
+
+const sizeChangerText = document.getElementById('size-input-text');
+const sizeChanger = document.getElementById('size-input');
+sizeChanger.addEventListener('input', () => {
+  sizeChangerText.textContent = sizeChanger.value + ' x ' + sizeChanger.value;
+  gridSize = sizeChanger.value;
+});
+sizeChanger.addEventListener('change', () => clearBoard());
 
 const resetButton = document.getElementById('reset-btn');
 resetButton.addEventListener('click', () => clearBoard());
