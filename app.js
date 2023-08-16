@@ -5,36 +5,29 @@ let rainbowMode = false;
 
 const sketchBoxContainer = document.getElementById('sketch-box');
 
-// for (let i = 1; i <= gridSize * gridSize; i++) {
-//   const gridDiv = document.createElement('div');
-//   sketchBoxContainer.appendChild(gridDiv);
-// }
-//https://www.google.com/search?client=firefox-b-e&q=firefox+filter+output
-
 function setupBoard() {
   sketchBoxContainer.style.cssText = `display: grid; grid-template-columns:`
-+ `repeat(${gridSize}, 1fr); grid-template-rows: repeat(${gridSize}, 1fr);`;
+    + `repeat(${gridSize}, 1fr); grid-template-rows: repeat(${gridSize}, 1fr);`;
   for (let i = 1; i <= gridSize * gridSize; i++) {
     const gridDiv = document.createElement('div');
     sketchBoxContainer.appendChild(gridDiv);
   }
-
   const gridElements = document.querySelectorAll('#sketch-box div');
   gridElements.forEach(div => {
-  div.addEventListener('mouseover', () => changeGridElementColor(div));
-});
+    div.addEventListener('mouseover', () => changeGridElementColor(div));
+  });
 }
 
 function changeGridElementColor(div) {
   if (!paintMode) {
     div.style.backgroundColor = 'white';
     return;
-  } 
+  }
   if (rainbowMode) {
     currentColor = getRandomColor();
     div.style.backgroundColor = currentColor;
     return;
-  } 
+  }
   else div.style.backgroundColor = currentColor;
 }
 
@@ -53,7 +46,7 @@ function setPaintButtonState(state) {
 const paintModeButton = document.getElementById('paint-btn');
 paintModeButton.addEventListener('click', () => {
   (!paintModeButton.getAttribute('class').includes('paint')) ?
-  setPaintButtonState(true) : setPaintButtonState(false);
+    setPaintButtonState(true) : setPaintButtonState(false);
 });
 
 window.addEventListener('keydown', (e) => {

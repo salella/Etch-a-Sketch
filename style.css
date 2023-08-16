@@ -43,13 +43,8 @@ a {
 
 .main {
   display: flex;
-  justify-self: center;
   justify-content: center;
   align-items: center;
-}
-
-.footer {
-  justify-self: end;
 }
 
 #sketch-box {
@@ -74,7 +69,7 @@ a {
 }
 
 .tools:hover {
-  box-shadow: 0 10px 13px rgb(126, 126, 126);
+  box-shadow: 0 10px 13px rgb(105, 105, 105);
 }
 
 .tools h3 {
@@ -84,10 +79,10 @@ a {
 }
 
 .tools .buttons {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
-.tools .btn {
+.btn {
   width: 150px;
   height: 50px;
   background-color: var(--primary-color);
@@ -98,20 +93,20 @@ a {
   user-select: none;
 }
 
-.tools .btn:hover {
+.btn:hover {
   cursor: pointer;
   box-shadow: 0 1px 3px rgb(66, 66, 66);
 }
 
-.tools .pick-color {
+.pick-color {
   height: auto;
 }
 
-.tools .pick-color input {
+.pick-color input {
   margin-top: 1rem;
 }
 
-.tools .pick-color input:hover {
+.pick-color input:hover {
   cursor: pointer;
 }
 
