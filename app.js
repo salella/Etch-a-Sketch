@@ -1,32 +1,32 @@
-let size = 16;
-let paintMode = true;
+let gridSize = 16;
+let paintMode = false;
 let currentColor = 'black';
 
 const sketchBoxContainer = document.getElementById('sketch-box');
 sketchBoxContainer.style.cssText = 'display: grid; grid-template-columns:'
 + 'repeat(16, 1fr); grid-template-rows: repeat(16, 1fr);';
 
-for (let i = 1; i <= size * size; i++) {
-  const gridDiv = document.createElement('div');
-  sketchBoxContainer.appendChild(gridDiv);
-}
+// for (let i = 1; i <= gridSize * gridSize; i++) {
+//   const gridDiv = document.createElement('div');
+//   sketchBoxContainer.appendChild(gridDiv);
+// }
 
 function setupBoard() {
-  for (let i = 1; i <= size * size; i++) {
+  for (let i = 1; i <= gridSize * gridSize; i++) {
     const gridDiv = document.createElement('div');
     sketchBoxContainer.appendChild(gridDiv);
   }
+
+  const gridElements = document.querySelectorAll('#sketch-box div');
+  gridElements.forEach(div => {
+  div.addEventListener('mouseover', () => changeGridElementColor(div));
+});
 }
 
 function changeGridElementColor(div) {
   if (!paintMode) div.style.backgroundColor = 'white';
   else div.style.backgroundColor = currentColor;
 }
-
-const gridElements = document.querySelectorAll('#sketch-box div');
-gridElements.forEach(div => {
-  div.addEventListener('mouseover', () => changeGridElementColor(div));
-});
 
 function setPaintButtonState(state) {
   if (state) {
